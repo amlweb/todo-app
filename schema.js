@@ -1,33 +1,25 @@
-const { 
-  buildSchema ,
-  GraphQLObjectType,
-  GraphQLInt,
-  GraphQLString,
-  GraphQLBoolean,
-} = require('graphql');
-
-const TaskType = new GraphQLObjectType({
-  name: 'Task',
-  description: '...',
-
-  fields: () => {
-    title: {
-      type: GraphQLString,
-      resolve; () => {}
-    }
-    isDone: {
-      type: GraphQLBoolean
-    }
-  }
-});
+const { buildSchema } = require('graphql');
 
 module.exports = buildSchema(`
+  type Task {
+    _id: ID!
+    title: String!
+    description: String!
+    date: String
+    isDone: Boolean
+  }
+
+  input TaskInput {
+    title: String!
+    description: String!
+  }
+
   type taskQuery {
-    tasks: [String!]!
+    tasks: [Task!]!
   }
 
   type taskMutation {
-    createTask(title: String): String
+    createTask(taskInput: TaskInput): Task
   }
 
   schema {
