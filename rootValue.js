@@ -11,10 +11,9 @@ module.exports = {
     },
     createTask: (args) => {
         const task = new Task({
-            _id: '11111',
             title: args.taskInput.title,
             description: args.taskInput.description,
-            createdAt: new Date().toISOString,
+            date: new Date(),
             isDone: false,
         });
 
