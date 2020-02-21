@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const Task = require('../models/task');
 
 class TaskService {
@@ -32,7 +33,7 @@ class TaskService {
     // save new blog using model which will save in MongoDB
     return task.save()
       .then(result => {
-        console.log(result)
+        console.log(chalk.gray(result))
         return result
       })
       .catch(err => {
