@@ -8,7 +8,7 @@ const TaskQuery = {
   args: {},
   resolve: async () => {
     const taskService = new TaskService();
-    const tasks = await taskService.getAllTasks();
+    const tasks = await taskService.tasks();
 
     return tasks;
   }

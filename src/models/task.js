@@ -7,15 +7,11 @@ const taskSchema = new Schema({
         type: String, 
         required: true
     },
-    description: {
+    content: {
         type: String,
         require: false
     },
-    date: {
-        type: Date,
-        required: true
-    },
-    isDone: {
+    done: {
         type: Boolean,
         required: true
     }

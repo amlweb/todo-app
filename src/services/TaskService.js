@@ -25,9 +25,8 @@ class TaskService {
 
     const task = new Task({
       title: opt.title,
-      description: opt.description,
-      date: new Date(),
-      isDone: false,
+      content: opt.content,
+      done: false,
     });
 
     // save new blog using model which will save in MongoDB
