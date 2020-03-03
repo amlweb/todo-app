@@ -17,7 +17,7 @@ class TaskService {
   }
 
   deleteTask(_id) {
-    console.log('delate')
+    console.log('delete')
   }
 
   createTask(opt) {
